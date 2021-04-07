@@ -1,0 +1,64 @@
+body {
+  box-sizing: border-box;
+  background-color: skyblue;
+  /* this includes the margin in the total size of the element */
+}
+
+h1 {
+  font-size: 2em;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+  border: 3px inset maroon;
+  font-size: 1.5em;
+  
+  margin: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+  border: 5px groove darkgreen;
+  margin: 10px;
+  padding: 10px;
+  background-color: darkseagreen;
+}
+
+p {
+  text-align: center;
+  font-size: 1em;
+}
+
+.bioblocks {
+  border: 5px outset maroon;
+  background-color: salmon;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+ol {
+  list-style: upper-roman;
+  list-style-position: inside;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul {
+  list-style: disc;
+  list-style-position: inside;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+footer {
+  margin-top: 20px;
+}
