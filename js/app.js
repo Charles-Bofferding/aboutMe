@@ -28,9 +28,24 @@ let noAnswers = [
   'Correct, there are so many fun types of kite. My favorite is a 2 line parachute kite because they are soft bodied and don\'t break if you run them into the ground'
 ]
 
+let correctAnswers = [
+  'yes',
+  'no',
+  'yes',
+  'no',
+  'no'
+]
+
 let userName = prompt('Why hello there, what is your name?');
 alert('Thanks for visiting ' + userName + '!');
 //console.log('Thanks for visiting ' + userName + '!');
+
+//Function Skeleton
+
+//Have a function that takes in the question information from the array, to ask the question, 
+//answerRead(questions[0], yesAnswers[0], noAnswers[0], correctAnswer[0]);
+
+
 
 
 //Question 1
