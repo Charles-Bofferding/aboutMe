@@ -3,6 +3,7 @@
 'use strict';
 
 let score = 0;
+let userName = '';
  
 let questions = [
   'Has Chaz built a PCBA? \nValid answers are: \nyes, y, no, and n',
@@ -36,112 +37,144 @@ let correctAnswers = [
   'no'
 ]
 
-let userName = prompt('Why hello there, what is your name?');
-alert('Thanks for visiting ' + userName + '!');
-//console.log('Thanks for visiting ' + userName + '!');
+function askName(){
+  userName = prompt('Why hello there, what is your name?');
+  alert('Thanks for visiting ' + userName + '!');
+  //console.log('Thanks for visiting ' + userName + '!');
+}
+
+
 
 //Function Skeleton
 
 //Have a function that takes in the question information from the array, to ask the question, 
 //answerRead(questions[0], yesAnswers[0], noAnswers[0], correctAnswer[0]);
 
+function firstGame(theQuestion, theYAnswer, theNAnswer, theCorrectAnswers){
+  //Question 1
+  let input1 = prompt(theQuestion);
+  let filtered1 = input1.toLowerCase();
+  //console.log(filtered1);
 
-
-
-//Question 1
-let input1 = prompt(questions[0]);
-let filtered1 = input1.toLowerCase();
-//console.log(filtered1);
-
-if(filtered1 === 'yes' || filtered1 === 'y'){
-  //console.log(yesAnswers[0]);
-  alert(yesAnswers[0]);
-  score++;
-} else if (filtered1 === 'no' || filtered1 === 'n'){
-  //console.log(noAnswers[0]);
-  alert(noAnswers[0]);
-} else {
-  //console.log('Invalid answer, please refresh and try again');
-  alert('Invalid answer, please refresh and try again');
+  if(filtered1 === 'yes' || filtered1 === 'y'){
+    //console.log(yesAnswers[0]);
+    alert(theYAnswer);
+    if ('yes' === theCorrectAnswers){
+    score++;
+    }
+  } else if (filtered1 === 'no' || filtered1 === 'n'){
+    //console.log(noAnswers[0]);
+    alert(theNAnswer);
+    if ('no' === theCorrectAnswers){
+      score++;
+    }
+  } else {
+    //console.log('Invalid answer, please refresh and try again');
+    alert('Invalid answer, please refresh and try again');
+  } 
 }
 
-//Question 2
-let input2 = prompt(questions[1]);
-let filtered2 = input2.toLowerCase();
-//console.log(filtered2);
-
-if(filtered2 === 'yes' || filtered2 === 'y'){
-  //console.log(yesAnswers[1]);
-  alert(yesAnswers[1]);
-} else if (filtered2 === 'no' || filtered2 === 'n'){
-  //console.log(noAnswers[1]);
-  alert(noAnswers[1]);
-  score++;
-} else {
-  //console.log('Invalid answer, please refresh and try again');
-  alert('Invalid answer, please refresh and try again');
+function loopQuestionArray(){
+  for(let i = 0; i<5; i++){
+    firstGame(questions[i], yesAnswers[i], noAnswers[i], correctAnswers[i]);
+  }
 }
 
-//Question 3
-let input3 = prompt(questions[2]);
-let filtered3 = input3.toLowerCase();
-//console.log(filtered3);
 
-if(filtered3 === 'yes' || filtered3 === 'y'){
-  //console.log(yesAnswers[2]);
-  alert(yesAnswers[2]);
-  score++;
-} else if (filtered3 === 'no' || filtered3 === 'n'){
-  //console.log(noAnswers[2]);
-  alert(noAnswers[2]);
-} else {
-  //console.log('Invalid answer, please refresh and try again');
-  alert('Invalid answer, please refresh and try again');
-}
+// //Question 1
+// let input1 = prompt(questions[0]);
+// let filtered1 = input1.toLowerCase();
+// //console.log(filtered1);
 
-//Question 4
-let input4 = prompt(questions[3]);
-let filtered4 = input4.toLowerCase();
-//console.log(filtered4);
+// if(filtered1 === 'yes' || filtered1 === 'y'){
+//   //console.log(yesAnswers[0]);
+//   alert(yesAnswers[0]);
+//   score++;
+// } else if (filtered1 === 'no' || filtered1 === 'n'){
+//   //console.log(noAnswers[0]);
+//   alert(noAnswers[0]);
+// } else {
+//   //console.log('Invalid answer, please refresh and try again');
+//   alert('Invalid answer, please refresh and try again');
+// }
 
-//In future labs with functions make this check an independent function instead of copying it 5 times for each question. It could return a boolean back with the answer and choose a default state for invalid input I guess
-if(filtered4 === 'yes' || filtered4 === 'y'){
-  //console.log(yesAnswers[3]);
-  alert(yesAnswers[3]);
-} else if (filtered4 === 'no' || filtered4 === 'n'){
-  //console.log(noAnswers[3]);
-  alert(noAnswers[3]);
-  score++;
-} else {
-  //console.log('Invalid answer, please refresh and try again');
-  alert('Invalid answer, please refresh and try again');
-}
+// //Question 2
+// let input2 = prompt(questions[1]);
+// let filtered2 = input2.toLowerCase();
+// //console.log(filtered2);
 
-//Question 5
-let input5 = prompt(questions[4]);
-let filtered5 = input5.toLowerCase();
-//console.log(filtered5);
+// if(filtered2 === 'yes' || filtered2 === 'y'){
+//   //console.log(yesAnswers[1]);
+//   alert(yesAnswers[1]);
+// } else if (filtered2 === 'no' || filtered2 === 'n'){
+//   //console.log(noAnswers[1]);
+//   alert(noAnswers[1]);
+//   score++;
+// } else {
+//   //console.log('Invalid answer, please refresh and try again');
+//   alert('Invalid answer, please refresh and try again');
+// }
 
-//In future labs with functions make this check an independent function instead of copying it 5 times for each question. It could return a boolean back with the answer and choose a default state for invalid input I guess
-if(filtered5 === 'yes' || filtered5 === 'y'){
-  //console.log(yesAnswers[4]);
-  alert(yesAnswers[4]);
-} else if (filtered5 === 'no' || filtered5 === 'n'){
-  //console.log(noAnswers[4]);
-  alert(noAnswers[4]);
-  score++;
-} else {
-  //console.log('Invalid answer, please refresh and try again');
-  alert('Invalid answer, please refresh and try again');
-}
+// //Question 3
+// let input3 = prompt(questions[2]);
+// let filtered3 = input3.toLowerCase();
+// //console.log(filtered3);
 
- 
+// if(filtered3 === 'yes' || filtered3 === 'y'){
+//   //console.log(yesAnswers[2]);
+//   alert(yesAnswers[2]);
+//   score++;
+// } else if (filtered3 === 'no' || filtered3 === 'n'){
+//   //console.log(noAnswers[2]);
+//   alert(noAnswers[2]);
+// } else {
+//   //console.log('Invalid answer, please refresh and try again');
+//   alert('Invalid answer, please refresh and try again');
+// }
 
+// //Question 4
+// let input4 = prompt(questions[3]);
+// let filtered4 = input4.toLowerCase();
+// //console.log(filtered4);
+
+// //In future labs with functions make this check an independent function instead of copying it 5 times for each question. It could return a boolean back with the answer and choose a default state for invalid input I guess
+// if(filtered4 === 'yes' || filtered4 === 'y'){
+//   //console.log(yesAnswers[3]);
+//   alert(yesAnswers[3]);
+// } else if (filtered4 === 'no' || filtered4 === 'n'){
+//   //console.log(noAnswers[3]);
+//   alert(noAnswers[3]);
+//   score++;
+// } else {
+//   //console.log('Invalid answer, please refresh and try again');
+//   alert('Invalid answer, please refresh and try again');
+// }
+
+// //Question 5
+// let input5 = prompt(questions[4]);
+// let filtered5 = input5.toLowerCase();
+// //console.log(filtered5);
+
+// //In future labs with functions make this check an independent function instead of copying it 5 times for each question. It could return a boolean back with the answer and choose a default state for invalid input I guess
+// if(filtered5 === 'yes' || filtered5 === 'y'){
+//   //console.log(yesAnswers[4]);
+//   alert(yesAnswers[4]);
+// } else if (filtered5 === 'no' || filtered5 === 'n'){
+//   //console.log(noAnswers[4]);
+//   alert(noAnswers[4]);
+//   score++;
+// } else {
+//   //console.log('Invalid answer, please refresh and try again');
+//   alert('Invalid answer, please refresh and try again');
+// }
+
+function secondGame(){
 //Number Guessing Game
   let correctNumber = Math.floor(Math.random() * 10) +1;
   //let correctNumber = 3;
   let guessCount = 4;
   let userGuess = 0;
+
 
   userGuess = prompt('Please enter a number from 1 to 10, you have 4 guesses');
 
@@ -162,37 +195,48 @@ if(filtered5 === 'yes' || filtered5 === 'y'){
     }
 
   }
+}
 
-//Non-Number Guessing Game
+function thirdGame(){
+  //Non-Number Guessing Game
 
-let tries = 6;
-let correctChoices = ['druid','wizard','monk','barbarian','warlock'];
+  let tries = 6;
+  let correctChoices = ['druid','wizard','monk','barbarian','warlock'];
 
-for (let i = 0; i < tries; i ++){
+  for (let i = 0; i < tries; i ++){
 
-  let userChoice = prompt('Can you name one of my 5 favorite D&D classes?');
-  for (let j = 0; j < correctChoices.length; j++){
-    if (userChoice.toLowerCase() == correctChoices[j]){
-      //win condition
-      alert('You got one of them!');
-      score++;
-      i = tries;
-      break;
+    let userChoice = prompt('Can you name one of my 5 favorite D&D classes?');
+    for (let j = 0; j < correctChoices.length; j++){
+      if (userChoice.toLowerCase() == correctChoices[j]){
+        //win condition
+        alert('You got one of them!');
+        score++;
+        i = tries;
+        break;
+      }
+      //console.log('Failed check to array spot ' + j);
     }
-    //console.log('Failed check to array spot ' + j);
-  }
 
-  //missed it
-  if (i < tries) {
-    alert('Nope, that isn\'t on of them');
-  }
-  if( i == tries - 1){
-    alert('Ran out of guesses. The correct answers are druid, wizard, monk, barbarian, and warlock');
+    //missed it
+    if (i < tries) {
+      alert('Nope, that isn\'t on of them');
+    }
+    if( i == tries - 1){
+      alert('Ran out of guesses. The correct answers are druid, wizard, monk, barbarian, and warlock');
+    }
   }
 }
 
-//console.log('Your score is ' + score + ' out of 7');
-alert('Your overall score is ' + score + ' out of 7');
+function finalAlerts(){
+  //console.log('Your score is ' + score + ' out of 7');
+  alert('Your overall score is ' + score + ' out of 7');
 
-//console.log('Hope that you had a fun time and learned a bit about me ' + userName + '\n\nBye!');
-alert('Hope that you had a fun time and learned a bit about me ' + userName + '\n\nBye!');
+  //console.log('Hope that you had a fun time and learned a bit about me ' + userName + '\n\nBye!');
+  alert('Hope that you had a fun time and learned a bit about me ' + userName + '\n\nBye!');
+}
+
+askName();
+loopQuestionArray();
+secondGame();
+thirdGame();
+finalAlerts();
